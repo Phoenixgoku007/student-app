@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Search User</title>
+</head>
+<body bgcolor="cyan">
+  <center><br><br><br><br><br>
+  <h1>Student Name</h1>
+  <form method="POST" action="{% url 'search_view' %}">
+    {% csrf_token %}
+    {{form.as_p}}
+   <!--<input type="text" name="username" placeholder="Enter username" required>-->
+    <button type="submit">Search</button>
+  </form>
+  {% if user_exists %}
+    <p>The username {{username}} already exists.</p>
+  {% else %}
+    <p>The username {{username}} does not exist in the database</p>
+  {% endif %}
+  </center>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

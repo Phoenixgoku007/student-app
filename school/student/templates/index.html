@@ -1,0 +1,36 @@
+<!-- myapp/templates/myapp/index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Add User</title>
+</head>
+<body bgcolor="cyan">
+  <center><br><br><br><br><br>
+  <h1>Student Name</h1>
+  <form method="post" action="{% url 'add_user_view' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <!--<label for="username">Name:</label>
+    <input type="text" id="username" name="username" required>-->
+    <button type="submit">Add User</button>
+   <!--<button><a href='search'>Search</a></button>--> 
+    
+  </form><br>
+
+  <!-- form for filter option -->
+
+  <form method="POST" action="{% url 'search_view' %}">
+    {% csrf_token %}
+   <!--<input type="text" name="username" placeholder="Enter username">--> 
+    <button type="submit">Search</button>
+  </form>
+  </center>
+ <!--{% if user_exists %}
+    <p>The username already exists.</p>
+  {% else %}
+    <p>The username does not exist in the database</p>
+  {% endif %}-->
+</body>
+</html>
