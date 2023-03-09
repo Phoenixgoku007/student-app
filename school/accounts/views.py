@@ -44,8 +44,10 @@ def login(request):
         check = authenticate(request, username=usr_name, password=pwd) # by using django's default auth feature checking whether name presents in usr_name variable and username table are same likewise for password
     
         if check is not None:
-           return HttpResponse("Logged in successfully:)") #Instead of printing a message I am going to redirect the user to the student app page in the next line
-           #return redirect('Student')
+           
+           # return HttpResponse("Logged in successfully:)") #Instead of printing a message I am going to redirect the user to the student app page in the next line
+
+           return redirect('/student/') # to redirect to a different app use the following syntax '/app/'
         else:
            return HttpResponse("Wrong Username And Password!!!...If You Don't Have An Accont Signup")    
 
