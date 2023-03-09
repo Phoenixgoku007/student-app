@@ -25,7 +25,14 @@
     {% csrf_token %}
    <!--<input type="text" name="username" placeholder="Enter username">--> 
     <button type="submit">Search</button>
+  </form><br>
+
+  <form method="POST" action="{% url 'student_list' %}">
+    {% csrf_token %}
+   <!--<input type="text" name="username" placeholder="Enter username">--> 
+    <button type="submit">Display</button>
   </form>
+
   </center>
  <!--{% if user_exists %}
     <p>The username already exists.</p>

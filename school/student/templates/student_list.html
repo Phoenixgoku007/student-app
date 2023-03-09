@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student List</title>
+</head>
+<body bgcolor="cyan">
+  <center><br><br><br><br>
+  <h1>Student List</h1>
+    {% for username in usernames %} <!--checks the db table if there are any entries present it will get fetched and printed to screen-->
+      <li>{{ username }}</li>
+    {% empty %}<!--if there are no data present in the db this block gets executed-->
+      <li>No students found.</li>
+    {% endfor %} <!--closing for loop-->
+  </center>
+</body>
+</html>

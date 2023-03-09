@@ -83,3 +83,11 @@ def search_view(request):
     else:
         form = SearchForm()
     return render(request, 'search.html', {'form': form})
+
+
+# the below code is for displaying the already existing student names
+
+def student_list(request):
+    students = Students.objects.all() # to retrieve all the objects of the students model or database
+    usernames = [student.username for student in students] # it is a list comprehension it loops through the students db and extracts its username attribute using student.username and stored it into usernames variable
+    return render(request, 'student_list.html', {'usernames':usernames}) # sends the usernames to html template 
