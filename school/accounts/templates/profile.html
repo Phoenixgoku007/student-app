@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Profile</title>
+</head>
+<body bgcolor="cyan">
+  <center><br><br><br><br><br>
+  <h1>Profile</h1>
+  <h2>User logged in successfully</h2>
+  <a href="{% url 'logout_user' %}" class="btn btn-primary">Logout</a><br><br>
+
+ <!--<a href="{% url 'delete_user' %}" class="btn btn-primary">Delete My Profile</a>--> 
+
+  <form method="POST" action="{% url 'delete_user' %}">
+    {% csrf_token %}
+   <!--<input type="text" name="username" placeholder="Enter username">--> 
+    <button type="submit">Delete My Profile</button>
+  </form><br>
+  </center>
+</body>
+</html>

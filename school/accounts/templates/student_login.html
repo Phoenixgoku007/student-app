@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <!-- Design by foolishdeveloper.com -->
-    <title>Signup Page</title>
+    <title>Student Login Page</title>
  
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -51,8 +51,8 @@ body{
     bottom: -80px;
 }
 form{
-    height: 600px;
-    width: 450px;
+    height: 520px;
+    width: 400px;
     background-color: rgba(255,255,255,0.13);
     position: absolute;
     transform: translate(-50%,-50%);
@@ -86,12 +86,12 @@ label{
 }
 input{
     display: block;
-    height: 40px;
+    height: 50px;
     width: 100%;
     background-color: rgba(255,255,255,0.07);
     border-radius: 3px;
     padding: 0 10px;
-    margin-top: 2px;
+    margin-top: 8px;
     font-size: 14px;
     font-weight: 300;
 }
@@ -99,7 +99,7 @@ input{
     color: #e5e5e5;
 }
 button{
-    margin-top: 14px;
+    margin-top: 50px;
     width: 100%;
     background-color: #ffffff;
     color: #080710;
@@ -139,30 +139,25 @@ button{
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form action="" method="post">
+    
+    <form method="post" action="{% url 'student_login' %}">
+        <h3>Student Login</h3>
         {% csrf_token %} 
-        <h3>Signup Here</h3>
+        <label for="username1">Username</label>
+        <input type="text" placeholder="Enter Username" id="username1" name="username1" required>
 
-        <label for="username">Username</label>
-        <input type="text" placeholder="Username" name="username" id="username" required>
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="password" name="pass" required>
 
-        <label for="email">Email</label>
-        <input type="email" placeholder="Email or Phone" name="email" id="email" required>
-
-        <label for="password1">Password</label>
-        <input type="password" placeholder="Password" id="password1" name="password1" required>
-
-
-        <label for="password2">Confrom Password</label>
-        <input type="password" placeholder="Confrom Password" id="password2" name="password2" required>
-        <button type="submit">Signup</button>
+        <button type="submit">Log In</button>
         
-        <a href="{% url 'login' %}" >i have already account</a>
+        <a href="{% url 'signup' %}" >Create a account</a><hr><br>
+
+        <a href="{% url 'login' %}" >Admin Login</a>
+
     </form>
 
    
-    
-
     
 </body>
 </html>
