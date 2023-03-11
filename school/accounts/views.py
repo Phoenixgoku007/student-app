@@ -82,19 +82,14 @@ def logout_user(request):
     logout(request) # to logout the current user
     return redirect('student_login')
 
-@login_required
 def delete_user(request):
     if request.method == 'POST':
-        email = request.user.email
-        try:
-            user = User.objects.get(email=email)
-        except User.DoesNotExist:
-            return HttpResponse("User does not exist!")
-        else:
-            user.delete()
-            return redirect('student_login')
-    else:
-        return HttpResponse("Invalid Request!")
+        value = User.objects.get(request.auth_user)
+        value.delete()
+        return HttpResponse("The user has been deleted successfully")
+
+        
+
 
 def student_login(request):
 
