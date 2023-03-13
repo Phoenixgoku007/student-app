@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'student',
     'accounts',
+    'search',
     #'debug-toolbar',
 ]
 
@@ -92,11 +93,11 @@ WSGI_APPLICATION = 'school.wsgi.application'
 
 DATABASES={
    'default':{
-      'ENGINE':'django.db.backends.postgresql',
-      'NAME':'students',
-      'USER':'postgres',
-      'PASSWORD':'arun12345',
-      'HOST':'localhost',
+      'ENGINE':'django.db.backends.postgresql', # default postgres version will get used
+      'NAME':'students', # database name
+      'USER':'postgres', # default server user name
+      'PASSWORD':'arun12345', # password created during the installation
+      'HOST':'localhost', # it will change while using remote server
       'PORT':'5432',
    }
 }

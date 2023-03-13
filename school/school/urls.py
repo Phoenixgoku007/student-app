@@ -20,5 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('student/', include('student.urls')),
     path('accounts/', include('accounts.urls')),
+    path('dropdown/',include('search.urls')),# facing issues while using this way to open the search box due to the code used in html file of search app
+    path('',include('search.urls')), # this way of directly running it on the root page is working properly
   #  path('__debug__/', include('debug_toolbar.urls')),
 ]
